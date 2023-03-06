@@ -14,6 +14,8 @@ public class ModelMapperConfig {
     public ModelMapper modelMapper() {
         ModelMapper modelMapper = new ModelMapper();
 
+        modelMapper.getConfiguration().setSkipNullEnabled(true);
+
 
         modelMapper.createTypeMap(Producto.class, ProductoDTO.class)
                 .addMapping(Producto::getId, ProductoDTO::setId)
@@ -32,7 +34,7 @@ public class ModelMapperConfig {
                 .addMapping(Categoria::getTitulo, CategoriaPlusDTO::setTitulo)
                 .addMapping(Categoria::getDescripcion, CategoriaPlusDTO::setDescripcion)
                 .addMapping(Categoria::getUrlImagen, CategoriaPlusDTO::setUrlImagen)
-                .addMapping(categoria -> categoria.getProductos() == null ? 0 : categoria.getProductos().size(), CategoriaPlusDTO::setCantidadProductos);
+                .addMapping(categoria -> categoria.getProductos().size(), CategoriaPlusDTO::setCantidadProductos);
 
         return modelMapper;
     }
