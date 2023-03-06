@@ -1,5 +1,6 @@
 package com.grupo6.apigestionreservas.config;
 import com.grupo6.apigestionreservas.dto.CategoriaSimpleDTO;
+import com.grupo6.apigestionreservas.dto.CategoriaPlusDTO;
 import com.grupo6.apigestionreservas.dto.ProductoDTO;
 import com.grupo6.apigestionreservas.model.Categoria;
 import com.grupo6.apigestionreservas.model.Producto;

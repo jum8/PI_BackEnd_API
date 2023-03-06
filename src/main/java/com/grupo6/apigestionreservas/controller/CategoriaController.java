@@ -1,6 +1,7 @@
 package com.grupo6.apigestionreservas.controller;
 
 import com.grupo6.apigestionreservas.dto.CategoriaDTO;
+import com.grupo6.apigestionreservas.dto.CategoriaPlusDTO;
 import com.grupo6.apigestionreservas.model.Categoria;
 import com.grupo6.apigestionreservas.service.CategoriaService;
 import jakarta.validation.Valid;
