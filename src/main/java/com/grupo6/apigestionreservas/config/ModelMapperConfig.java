@@ -32,7 +32,7 @@ public class ModelMapperConfig {
                 .addMapping(Categoria::getTitulo, CategoriaPlusDTO::setTitulo)
                 .addMapping(Categoria::getDescripcion, CategoriaPlusDTO::setDescripcion)
                 .addMapping(Categoria::getUrlImagen, CategoriaPlusDTO::setUrlImagen)
-                .addMapping(categoria -> categoria.getProductos() == null ? 0 : categoria.geetProductos).size(), CategoriaPlusDTO::setCantidadProductos);
+                .addMapping(categoria -> categoria.getProductos() == null ? 0 : categoria.geetProductos().size(), CategoriaPlusDTO::setCantidadProductos);
 
         return modelMapper;
     }
