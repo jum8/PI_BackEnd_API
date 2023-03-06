@@ -36,7 +36,7 @@ public class ModelMapperConfig {
                 .addMapping(Categoria::getDescripcion, CategoriaPlusDTO::setDescripcion)
                 .addMapping(Categoria::getUrlImagen, CategoriaPlusDTO::setUrlImagen)
                 .addMappings(mapper -> mapper.using(ctx -> {
-                    Set<Producto> productos = ctx.getSource().getProductos();
+                    Set<Producto> productos = ((Categoria) ctx.getSource()).getProductos();
                     return productos != null ? productos.size() : 0;
                 }).map(Categoria::getProductos, CategoriaPlusDTO::setCantidadProductos));
 
