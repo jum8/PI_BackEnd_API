@@ -13,7 +13,7 @@ import java.util.List;
 public class ModelMapperConfig {
     @Bean
     public ModelMapper modelMapper() {
-        ModelMapper modelMapper = new ModelMapper();
+        ModelMapper mapper = new ModelMapper();
 
         modelMapper.getConfiguration().setSkipNullEnabled(true);
 
@@ -40,6 +40,6 @@ public class ModelMapperConfig {
                     return productos != null ? productos.size() : 0;
                 }).map(Categoria::getProductos, CategoriaPlusDTO::setCantidadProductos));
 
-        return modelMapper;
+        return mapper;
     }
 }
