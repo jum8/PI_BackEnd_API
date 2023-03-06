@@ -26,6 +26,13 @@ public class ModelMapperConfig {
                 .addMapping(categoria -> categoria.getId(), CategoriaSimpleDTO::setId)
                 .addMapping(categoria -> categoria.getTitulo(), CategoriaSimpleDTO::setTitulo);
 
+        modelMapper.createTypeMap(Categoria.class, CategoriaPlusDTO.class)
+                .addMapping(Categoria::getId, CategoriaPlusDTO::setId)
+                .addMapping(Categoria::getTitulo, CategoriaPlusDTO::setTitulo)
+                .addMapping(Categoria::getDescripcion, CategoriaPlusDTO::setDescripcion)
+                .addMapping(Categoria::getUrlImagen, CategoriaPlusDTO::setUrlImagen)
+                .addMapping(categoria -> categoria.getProductos().size(), CategoriaSimpleDTO::setCantidadProductos);
+
         return modelMapper;
     }
 }

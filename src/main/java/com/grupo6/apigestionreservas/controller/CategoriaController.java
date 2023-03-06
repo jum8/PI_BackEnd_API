@@ -21,6 +21,11 @@ public class CategoriaController {
         return categoriaService.findAll();
     }
 
+    @GetMapping("/qty")
+    public List<CategoriaPlusDTO> getAllCategoriasWithQty() {
+        return categoriaService.findAllWithQty();
+    }
+
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
     public Integer createCategoria(@RequestBody @Valid CategoriaDTO categoriaDTO) {
