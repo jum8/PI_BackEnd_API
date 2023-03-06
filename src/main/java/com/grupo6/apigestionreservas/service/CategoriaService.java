@@ -26,6 +26,16 @@ public class CategoriaService {
         return categoriaDTOS;
     }
 
+    public List<CategoriaPlusDTO> findAllWithQty() {
+        List<Categoria> categorias = categoriaRepository.findAll();
+
+        List<CategoriaPlusDTO> categoriaPlusDTOS = new ArrayList<>();
+        categorias.forEach(categoria -> categoriaPlusDTOS.add(mapper.map(categoria, CategoriaPlusDTO.class)));
+        return categoriaPlusDTOS;
+    }
+
+
+
     public Integer create(CategoriaDTO categoriaDTO) {
         return  categoriaRepository.save(mapper.map(categoriaDTO,Categoria.class)).getId();
     }
