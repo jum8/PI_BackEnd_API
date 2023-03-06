@@ -2,6 +2,7 @@ package com.grupo6.apigestionreservas.service;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.grupo6.apigestionreservas.dto.CategoriaDTO;
+import com.grupo6.apigestionreservas.dto.CategoriaPlusDTO;
 import com.grupo6.apigestionreservas.model.Categoria;
 import com.grupo6.apigestionreservas.repository.CategoriaRepository;
 import com.grupo6.apigestionreservas.util.NotFoundException;
