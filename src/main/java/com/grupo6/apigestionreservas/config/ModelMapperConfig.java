@@ -7,7 +7,7 @@ import com.grupo6.apigestionreservas.model.Producto;
 import org.modelmapper.ModelMapper;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import java.util.Set;
+import java.util.List;
 
 @Configuration
 public class ModelMapperConfig {
@@ -36,8 +36,8 @@ public class ModelMapperConfig {
                 .addMapping(Categoria::getDescripcion, CategoriaPlusDTO::setDescripcion)
                 .addMapping(Categoria::getUrlImagen, CategoriaPlusDTO::setUrlImagen)
                 .addMappings(mapper -> mapper.using(ctx -> {
-                    Set<Producto> productos = ctx.getSource();
-                    return productos != null ? 1 : 0;
+                    List<Producto> productos = ctx.getSource();
+                    return productos != null ? productos.size() : 0;
                 }).map(Categoria::getProductos, CategoriaPlusDTO::setCantidadProductos));
 
         return modelMapper;
